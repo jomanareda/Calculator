@@ -1,0 +1,107 @@
+:root {
+  --bg: #f2f2f2;
+  --text: #000;
+  --display-bg: #e0e0e0;
+  --btn-dark: #444;
+  --btn-light: #ccc;
+  --btn-orange: #ffb6c1; /* baby pink */
+  --btn-font: #fff;
+}
+
+body.dark-mode {
+  --bg: #1c1c1c;
+  --text: #fff;
+  --display-bg: #000;
+  --btn-dark: #333;
+  --btn-light: #666;
+  --btn-orange: #ffb6c1;
+  --btn-font: #fff;
+}
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  transition: all 0.3s ease;
+}
+
+.calculator {
+  background: var(--display-bg);
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+  padding: 20px;
+  width: 320px;
+}
+
+.display {
+  background: var(--display-bg);
+  color: var(--text);
+  font-size: 2.5rem;
+  text-align: right;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  word-wrap: break-word;
+  min-height: 50px;
+}
+
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.btn {
+  padding: 20px;
+  border: none;
+  border-radius: 50px;
+  font-size: 1.5rem;
+  color: var(--btn-font);
+  background: var(--btn-dark);
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.btn.light-gray {
+  background: var(--btn-light);
+  color: var(--text);
+}
+
+.btn.orange {
+  background: var(--btn-orange);
+  color: #fff;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+.mode-toggle {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.mode-toggle button {
+  font-size: 1.2rem;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+@media (max-width: 400px) {
+  .calculator {
+    width: 90%;
+    padding: 15px;
+  }
+  .btn {
+    padding: 15px;
+    font-size: 1.2rem;
+  }
+}
